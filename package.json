@@ -1,0 +1,25 @@
+{
+    "name": "blog-api",
+    "version": "0.0.1",
+    "description": "API for fetching blog posts and related APIs",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/reznik99/blog-api.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/reznik99/blog-api/issues"
+    },
+    "homepage": "https://github.com/reznik99/blog-api#readme",
+    "dependencies": {
+        "body-parser": "^1.19.1",
+        "cors": "^2.8.5",
+        "express": "^4.17.2"
+    }
+}
