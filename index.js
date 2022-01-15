@@ -19,7 +19,6 @@ app.get('/posts', (req, res) => {
 })
 app.get('/post/:title', (req, res) => {
     const { title } = req.params
-    console.log(postsContent)
     res.status(200).send({
         postData: postsContent[title]
     })
