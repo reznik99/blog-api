@@ -26,5 +26,5 @@ app.get('/post/:title', (req, res) => {
 
 //listen
 app.listen(PORT, () => {
-    console.info(`FoxTrot Server listening on ${PORT}`)
+    console.info(`Blog API Server listening on ${PORT}`)
 })
