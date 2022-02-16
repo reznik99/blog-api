@@ -1,9 +1,11 @@
 import { readdir, readFile } from 'fs'
+import path from 'path'
 
+const __dirname = path.resolve()
 const postsContent = new Map()
 
 // Read all articles into map on startup
-readFiles('articles/', (filename, content) => {
+readFiles(`${path.join(__dirname, 'articles/')}`, (filename, content) => {
     filename = filename.split('.md')[0]
     postsContent[filename] = content
 }, errHandler)
