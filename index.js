@@ -4,7 +4,7 @@ import { postsContent } from './dataLoader.js'
 import { articles } from './articleinfo.js'
 import cors from 'cors'
 
-const PORT = process.env.PORT || 6969
+const PORT = process.env.PORT || 8888
 const app = express()
 
 //middleware
