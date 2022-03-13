@@ -1,10 +1,10 @@
 ## How to make a RaspberryPI Remote Controlled car! Websockets & Streams
-### This blog is a work in progress
+> ### This blog is a work in progress
 In this blog we are going to make a remote controlled car using:
 - RaspberryPI
-- Power Bank
-- 2 DC motors
-- RaspberryPI Camera
+- RaspberryPI Camera v1/v2
+- Power Bank/Battery power for RaspberryPI and motors
+- 2 DC motors (Left & Right wheel drivers)
 - MotorDriver IC (H-Bridge)
 - Some copper cables
 
@@ -14,7 +14,17 @@ In terms of software:
 - Client software that will run on the RaspberryPI to convert commands to GPIO Pin actions to control the motors (PWM etc.)
 
 
-### RaspberryPI Client
+## 1. Relay Server
+
+### 1.1 HTTP Server
+We will use **Express** to spin up a simple REST API for Login and fetching available robots
+
+### 1.2 Websocket Server
+We will use **Websockets** to transmit commands, statistics and video in *real-time* to the browser
+
+## 2. RaspberryPI Client
+
+### 2.1 Authentication and websocket logic
 Code for Raspberry PI Client to connect to WebSocket Relay Server
 ~~~js
 const axios = require("axios")
@@ -54,7 +64,7 @@ We first authenticate using HTTP and credentials. This let's us recieve a JWT To
 
 This token is used to initialize the WebSocket connection to the Relay Server (so that not everyone can connect to it and DoS us)
 
-### Pin Control
+### 2.2 Pin Control
 Within the message event handler. We need to figure out the command recieved, and perform that action on the GPIO pins
 
 ~~~js
