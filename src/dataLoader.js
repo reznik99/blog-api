@@ -1,11 +1,12 @@
 import { readdir, readFile } from 'fs'
 import path from 'path'
+import { log_error } from './log.js'
 
 const __dirname = path.resolve()
 const postsContent = new Map()
 
 // Read all articles into map on startup
-readFiles(`${path.join(__dirname, 'articles/')}`, (filename, content) => {
+readFiles(`${path.join(__dirname, './src/articles/')}`, (filename, content) => {
     filename = filename.split('.md')[0]
     postsContent[filename] = content
 }, errHandler)
@@ -29,7 +30,7 @@ function readFiles(dirname, onFileContent, onError) {
 }
 
 function errHandler(err) {
-    console.error(err)
+    log_error(err)
 }
 
 export {

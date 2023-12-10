@@ -1,5 +1,3 @@
-
-
 const articles = [
     {
         image: "https://media.wired.com/photos/59266b6daf95806129f4f659/master/w_960,c_limit/RaspberryPiTA.jpg 960w",
